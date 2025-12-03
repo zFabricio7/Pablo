@@ -1,5 +1,4 @@
 #include "raylib.h"
-#include "time.h"
 
 #define STAR_COUNT 300
 
@@ -74,7 +73,7 @@ int main(void)
 
     return 0;
 }
-
+/***************************************************************************/
 void iniciar_estrellas(int screenWidth, int screenHeight)
 {
     for (int i = 0; i < STAR_COUNT; i++)
@@ -131,19 +130,19 @@ void PantallaMenu(Pantalla *pantallaActual, Texture2D logo, int screenWidth, int
     }
     else
     {
-        DibujarAlien2(960, 150, 32);
+        DibujarAlien2(980, 150, 32);
         DibujarAlien4(1460, 120, 32);
     }
     DibujarJugador(1250, 850, 32);
 
-    Rectangle btnJugar = {x, 560, 300, float(fontSize)}; // HITBOX
-    Rectangle btnSalir = {x, 720, 300, float(fontSize)};
+    Rectangle btnJugar = {x, 600, 300, float(fontSize)}; // HITBOX
+    Rectangle btnSalir = {x, 780, 300, float(fontSize)};
 
     bool hitbxJugar = CheckCollisionPointRec(mouse, btnJugar);
     bool hitbxSalir = CheckCollisionPointRec(mouse, btnSalir);
 
-    DrawText("JUGAR", x, 540, fontSize, hitbxJugar ? GREEN : WHITE);
-    DrawText("SALIR", x, 700, fontSize, hitbxSalir ? RED : WHITE);
+    DrawText("JUGAR", x, 600, fontSize, hitbxJugar ? GREEN : WHITE);
+    DrawText("SALIR", x, 780, fontSize, hitbxSalir ? RED : WHITE);
 
     if (hitbxSalir && click)
     {
